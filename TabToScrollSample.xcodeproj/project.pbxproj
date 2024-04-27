@@ -10,7 +10,6 @@
 		C1FD0A7A2BDD3C1A00EE93D5 /* TabToScrollSampleApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1FD0A792BDD3C1A00EE93D5 /* TabToScrollSampleApp.swift */; };
 		C1FD0A7C2BDD3C1A00EE93D5 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1FD0A7B2BDD3C1A00EE93D5 /* ContentView.swift */; };
 		C1FD0A7E2BDD3C1C00EE93D5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C1FD0A7D2BDD3C1C00EE93D5 /* Assets.xcassets */; };
-		C1FD0A812BDD3C1C00EE93D5 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C1FD0A802BDD3C1C00EE93D5 /* Preview Assets.xcassets */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -18,7 +17,6 @@
 		C1FD0A792BDD3C1A00EE93D5 /* TabToScrollSampleApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabToScrollSampleApp.swift; sourceTree = "<group>"; };
 		C1FD0A7B2BDD3C1A00EE93D5 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		C1FD0A7D2BDD3C1C00EE93D5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		C1FD0A802BDD3C1C00EE93D5 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,17 +52,8 @@
 				C1FD0A792BDD3C1A00EE93D5 /* TabToScrollSampleApp.swift */,
 				C1FD0A7B2BDD3C1A00EE93D5 /* ContentView.swift */,
 				C1FD0A7D2BDD3C1C00EE93D5 /* Assets.xcassets */,
-				C1FD0A7F2BDD3C1C00EE93D5 /* Preview Content */,
 			);
 			path = TabToScrollSample;
-			sourceTree = "<group>";
-		};
-		C1FD0A7F2BDD3C1C00EE93D5 /* Preview Content */ = {
-			isa = PBXGroup;
-			children = (
-				C1FD0A802BDD3C1C00EE93D5 /* Preview Assets.xcassets */,
-			);
-			path = "Preview Content";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -125,7 +114,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C1FD0A812BDD3C1C00EE93D5 /* Preview Assets.xcassets in Resources */,
 				C1FD0A7E2BDD3C1C00EE93D5 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -271,7 +259,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"TabToScrollSample/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "";
 				DEVELOPMENT_TEAM = A5LBYGCGKX;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -300,7 +288,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"TabToScrollSample/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "";
 				DEVELOPMENT_TEAM = A5LBYGCGKX;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
