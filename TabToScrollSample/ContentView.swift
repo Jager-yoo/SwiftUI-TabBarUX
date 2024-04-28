@@ -7,19 +7,75 @@
 
 import SwiftUI
 
+final class TabManager: ObservableObject {
+
+  @Published private var tabSelection: Tabs = .red
+  @Published var redTabbedTwice: Bool = false
+  @Published var blueTabbedTwice: Bool = false
+
+  var tabHandler: Binding<Tabs> {
+    Binding(
+      get: { self.tabSelection },
+      set: { newTab in
+        if newTab == self.tabSelection {
+          // 이전과 똑같으면
+          switch newTab {
+          case .red:
+            self.redTabbedTwice = true
+          case .blue:
+            self.blueTabbedTwice = true
+          }
+        }
+        self.tabSelection = newTab
+      }
+    )
+  }
+
+  enum Tabs: Hashable {
+    case red
+    case blue
+  }
+}
+
 struct ContentView: View {
 
-  var body: some View {
-    TabView {
-      RedView()
-        .tabItem {
-          Label("RED", systemImage: "flame")
-        }
+  @StateObject private var tabManager = TabManager()
 
-      BlueView()
-        .tabItem {
-          Label("BLUE", systemImage: "drop")
-        }
+  var body: some View {
+    TabView(selection: tabManager.tabHandler) {
+      // RED TAB
+      ScrollViewReader { proxy in
+        RedView()
+          .onChange(of: tabManager.redTabbedTwice) { _, tapped in
+            if tapped {
+              withAnimation {
+                proxy.scrollTo("TOP", anchor: .bottom)
+              }
+              tabManager.redTabbedTwice = false
+            }
+          }
+      }
+      .tabItem {
+        Label("RED", systemImage: "flame")
+      }
+      .tag(TabManager.Tabs.red)
+
+      // BLUE TAB
+      ScrollViewReader { proxy in
+        BlueView()
+          .onChange(of: tabManager.blueTabbedTwice) { _, tapped in
+            if tapped {
+              withAnimation {
+                proxy.scrollTo("TOP", anchor: .bottom)
+              }
+              tabManager.blueTabbedTwice = false
+            }
+          }
+      }
+      .tabItem {
+        Label("BLUE", systemImage: "drop")
+      }
+      .tag(TabManager.Tabs.blue)
     }
   }
 }
@@ -37,6 +93,7 @@ struct RedView: View {
                 .overlay {
                   if num == 1 {
                     Text("TOP")
+                      .id("TOP")
                   } else if num == 100 {
                     Text("BOTTOM")
                   }
@@ -63,6 +120,7 @@ struct BlueView: View {
                 .overlay {
                   if num == 1 {
                     Text("TOP")
+                      .id("TOP")
                   } else if num == 100 {
                     Text("BOTTOM")
                   }
