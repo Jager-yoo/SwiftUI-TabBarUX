@@ -24,6 +24,7 @@ final class TabManager: ObservableObject {
         if newTab == self.tabSelection {
           // 같은 탭이 2번 눌렸다면
           // TODO: 스로틀링 0.35초 적용 필요 있음. 애니메이션 끝나기 전에 pop 시키면 문제 생김
+          // TODO: https://github.com/boraseoksoon/Throttler 이거 써보기
           switch newTab {
           case .red:
             guard self.redPath.isEmpty else {
