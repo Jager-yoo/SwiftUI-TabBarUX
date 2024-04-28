@@ -11,8 +11,8 @@ final class TabManager: ObservableObject {
 
   @Published private var tabSelection: Tabs = .red
 
-  var redTabbedTwice: Bool = false
-  var blueTabbedTwice: Bool = false
+  @Published var redTabbedTwice: Bool = false
+  @Published var blueTabbedTwice: Bool = false
 
   var redPath = NavigationPath()
   var bluePath = NavigationPath()
